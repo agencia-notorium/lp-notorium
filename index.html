@@ -395,6 +395,56 @@
   .spec-grid h3 { font-size: 22px; font-weight: 700; margin: 8px 0 8px; color: #0b0f0c; }
   .spec-grid p { margin: 0; font-size: 13px; color: #5d675f; line-height: 1.45; }
   @media (min-width: 900px) { .spec-grid { grid-template-columns: repeat(4, 1fr); gap: 16px; } .spec-grid article { padding: 28px 24px; } .spec-grid h3 { font-size: 26px; } }
+
+  /* ---- KPIs (resultado) ---- */
+  .kpi-wrap { margin-top: 72px; }
+  .kpi-head h3 { font-size: clamp(26px, 3.4vw, 36px); font-weight: 700; margin-top: 12px; }
+  .kpis { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 28px; }
+  .kpi {
+    position: relative; overflow: hidden; display: flex; flex-direction: column; gap: 10px;
+    padding: 22px 20px; border-radius: 20px; background: var(--card);
+    border: 1px solid rgba(255,255,255,.07);
+    transition: border-color .3s ease, transform .3s ease;
+  }
+  .kpi:hover { border-color: rgba(84,255,70,.3); transform: translateY(-2px); }
+  .kpi-label { font: 500 11px/1.3 "JetBrains Mono", monospace; text-transform: uppercase; letter-spacing: .08em; color: var(--muted); }
+  .kpi-num {
+    font: 700 clamp(38px, 9vw, 56px)/.95 "Space Grotesk", sans-serif; letter-spacing: -.045em;
+    font-variant-numeric: tabular-nums; color: var(--fg); white-space: nowrap;
+  }
+  .kpi-sub { font-size: 13px; line-height: 1.4; color: var(--muted); margin-top: auto; }
+  .kpi-main {
+    grid-column: 1 / -1; padding: 26px 22px 0;
+    background:
+      radial-gradient(120% 90% at 100% 100%, rgba(84,255,70,.16), transparent 55%),
+      linear-gradient(rgba(255,255,255,.035) 1px, transparent 1px) 0 0 / 100% 28px,
+      var(--card);
+    border-color: rgba(84,255,70,.28);
+  }
+  .kpi-main { container-type: inline-size; }
+  .kpi-main .kpi-num { font-size: clamp(48px, 21cqi, 120px); background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; padding-bottom: .06em; }
+  .kpi-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; }
+  .kpi-tag { display: inline-flex; align-items: center; gap: 7px; font: 500 11px "JetBrains Mono", monospace; color: var(--neon); padding: 5px 10px; border-radius: 999px; border: 1px solid rgba(84,255,70,.35); background: rgba(84,255,70,.06); }
+  .kpi-tag i { width: 6px; height: 6px; border-radius: 50%; background: var(--neon); box-shadow: 0 0 0 0 rgba(84,255,70,.6); animation: kpiPulse 2s infinite; }
+  @keyframes kpiPulse { 0% { box-shadow: 0 0 0 0 rgba(84,255,70,.55); } 70% { box-shadow: 0 0 0 8px rgba(84,255,70,0); } 100% { box-shadow: 0 0 0 0 rgba(84,255,70,0); } }
+  .kpi-spark { display: block; width: calc(100% + 44px); height: 90px; margin: 6px -22px 0; }
+  .spark-line { stroke-dasharray: 1; stroke-dashoffset: 0; }
+  .js .kpi-main:not(.in) .spark-line { stroke-dashoffset: 1; }
+  .js .kpi-main:not(.in) .spark-area { opacity: 0; }
+  .spark-line { transition: stroke-dashoffset 1.8s cubic-bezier(.22,1,.36,1); }
+  .spark-area { transition: opacity 1.2s ease .6s; }
+  @media (min-width: 900px) {
+    .kpi-wrap { margin-top: 96px; display: grid; grid-template-columns: 280px 1fr; gap: 48px; align-items: start; }
+    .kpi-head { position: sticky; top: 32px; }
+    .kpis { margin-top: 0; grid-template-columns: 1.35fr 1fr; grid-template-rows: 1fr 1fr; gap: 16px; }
+    .kpi { padding: 26px 26px; }
+    .kpi-main { grid-column: 1; grid-row: 1 / 3; padding: 30px 30px 0; justify-content: flex-start; }
+    .kpi-main .kpi-num { margin-top: auto; }
+    .kpi-spark { width: calc(100% + 60px); margin: 10px -30px 0; height: 120px; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    .kpi-tag i { animation: none; } .spark-line, .spark-area { transition: none; }
+  }
 </style>
 </head>
 <body>
@@ -490,15 +540,42 @@
       </article>
     </div>
 
-    <div class="result">
-      <div class="result-head">
+    <div class="kpi-wrap">
+      <header class="kpi-head">
         <span class="label">= Resultado até o momento em 2026</span>
-        <p>Know-how de muito resultado.</p>
-      </div>
-      <div class="result-stats">
-        <div><b class="neon">+R$ 10 mi</b><span>gerados em receita para clientes</span></div>
-        <div><b class="neon">+100</b><span>empresas atendidas</span></div>
-        <div><b class="neon">+3 mi</b><span>pessoas impactadas por mês</span></div>
+        <h3>Know-how de <span class="neon">muito resultado.</span></h3>
+      </header>
+
+      <div class="kpis">
+        <article class="kpi kpi-main">
+          <div class="kpi-top">
+            <span class="kpi-label">Receita gerada para clientes</span>
+            <span class="kpi-tag"><i></i>2026</span>
+          </div>
+          <b class="kpi-num" data-to="10" data-prefix="+R$&nbsp;" data-suffix="&nbsp;mi">+R$&nbsp;10&nbsp;mi</b>
+          <svg class="kpi-spark" viewBox="0 0 400 90" preserveAspectRatio="none" aria-hidden="true">
+            <defs>
+              <linearGradient id="sparkFill" x1="0" y1="0" x2="0" y2="1">
+                <stop offset="0" stop-color="#54ff46" stop-opacity=".28"/>
+                <stop offset="1" stop-color="#54ff46" stop-opacity="0"/>
+              </linearGradient>
+            </defs>
+            <path class="spark-area" d="M0 82 C40 80 60 74 95 70 S150 62 185 55 S240 50 270 38 S330 22 360 14 L400 6 L400 90 L0 90 Z" fill="url(#sparkFill)"/>
+            <path class="spark-line" d="M0 82 C40 80 60 74 95 70 S150 62 185 55 S240 50 270 38 S330 22 360 14 L400 6" fill="none" stroke="#54ff46" stroke-width="2.5" stroke-linecap="round" vector-effect="non-scaling-stroke"/>
+          </svg>
+        </article>
+
+        <article class="kpi">
+          <span class="kpi-label">Empresas atendidas</span>
+          <b class="kpi-num" data-to="100" data-prefix="+">+100</b>
+          <span class="kpi-sub">Em restaurantes, saúde, varejo e construção</span>
+        </article>
+
+        <article class="kpi">
+          <span class="kpi-label">Pessoas impactadas</span>
+          <b class="kpi-num" data-to="3" data-prefix="+" data-suffix="&nbsp;mi">+3&nbsp;mi</b>
+          <span class="kpi-sub">por mês, com anúncios e conteúdos</span>
+        </article>
       </div>
     </div>
   </div>
@@ -806,6 +883,38 @@
     formSec.scrollIntoView({ behavior: 'smooth', block: 'start' });
   });
 })();
+
+  // KPIs: contagem animada quando o bloco entra na tela (o HTML já traz o valor final).
+  (function () {
+    document.documentElement.classList.add('js');
+    var nums = document.querySelectorAll('.kpi-num[data-to]');
+    var main = document.querySelector('.kpi-main');
+    var reduce = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+    function run(el) {
+      var to = parseFloat(el.dataset.to), pre = el.dataset.prefix || '', suf = el.dataset.suffix || '';
+      if (reduce) return;
+      var t0 = null, dur = 1600;
+      function frame(t) {
+        if (!t0) t0 = t;
+        var k = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - k, 4);
+        el.innerHTML = pre + Math.round(to * e) + suf;
+        if (k < 1) requestAnimationFrame(frame);
+      }
+      el.innerHTML = pre + '0' + suf;
+      requestAnimationFrame(frame);
+    }
+    if (!('IntersectionObserver' in window)) { if (main) main.classList.add('in'); return; }
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (en) {
+        if (!en.isIntersecting) return;
+        io.unobserve(en.target);
+        if (en.target === main) main.classList.add('in');
+        else run(en.target);
+      });
+    }, { threshold: .4 });
+    nums.forEach(function (n) { io.observe(n); });
+    if (main) io.observe(main);
+  })();
 </script>
 </body>
 </html>
