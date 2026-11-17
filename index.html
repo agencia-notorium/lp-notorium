@@ -1,0 +1,805 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Notorium · Mais estratégia no conteúdo, mais resultado no tráfego</title>
+<meta name="description" content="Agência de performance em Vitória, ES. Tráfego pago, conteúdo e estratégia. +100 clientes e R$ 10 milhões gerados em receita em 2025. Peça seu diagnóstico gratuito.">
+<meta property="og:title" content="Mais estratégia no conteúdo. Mais resultado no tráfego. · Notorium">
+<meta property="og:description" content="+100 clientes e R$ 10 milhões gerados em receita em 2025. Peça seu diagnóstico gratuito.">
+<meta property="og:image" content="img/cases/hero-team-wide.jpg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@500&display=swap" rel="stylesheet">
+
+<!-- ====================== CONFIGURAÇÃO ====================== -->
+<script>
+  window.LP_CONFIG = {
+    // Número que recebe os leads (DDI + DDD + número, só dígitos).
+    whatsapp: "5527928346659",
+    // URL que grava o lead (Make, Zapier, n8n, CRM). Sem ela, o lead só chega pelo WhatsApp.
+    webhookUrl: "https://oezfrdomahvcsaxrvtvh.supabase.co/functions/v1/webhook-leads",
+    // Mesmo Pixel do site agencianotorium.com.br
+    metaPixelId: "977521154919103",
+    instagram: "agencia.notorium"
+  };
+</script>
+
+<script>
+  (function () {
+    var id = window.LP_CONFIG.metaPixelId;
+    if (!id) return;
+    !function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+    n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;
+    n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;
+    t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,
+    document,'script','https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', id);
+    fbq('track', 'PageView');
+  })();
+</script>
+
+<style>
+  :root {
+    --bg: #050806;
+    --card: #0c110d;
+    --card-2: #111812;
+    --fg: #f1f7f2;
+    --muted: #9aa69c;
+    --line: rgba(255,255,255,.09);
+    --neon: #54ff46;
+    --neon-2: #00d89d;
+    --neon-ink: #020703;
+    --grad: linear-gradient(135deg, #54ff46, #00d89d);
+    --radius: 20px;
+    --max: 1120px;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    margin: 0; background: var(--bg); color: var(--fg);
+    font: 400 16px/1.6 "Inter", system-ui, sans-serif; -webkit-font-smoothing: antialiased;
+  }
+  img { display: block; max-width: 100%; }
+  a { color: inherit; }
+  .wrap { width: 100%; max-width: var(--max); margin: 0 auto; padding: 0 20px; }
+  h1, h2, h3 { font-family: "Space Grotesk", sans-serif; letter-spacing: -0.03em; line-height: 1.04; margin: 0; }
+  h2 { font-size: clamp(30px, 5.4vw, 52px); font-weight: 700; }
+  .neon { background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .label { font: 500 13px "JetBrains Mono", monospace; color: var(--neon); letter-spacing: .02em; }
+  section { padding: 72px 0; }
+
+  .btn {
+    display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+    background: var(--neon); color: var(--neon-ink); text-decoration: none;
+    font: 700 16px/1 "Space Grotesk", sans-serif; letter-spacing: -.01em;
+    padding: 18px 28px; border-radius: 999px; border: 0; cursor: pointer;
+    box-shadow: 0 10px 40px -10px rgba(84,255,70,.6);
+    transition: transform .2s ease, box-shadow .2s ease;
+  }
+  .btn:hover { transform: translateY(-2px); box-shadow: 0 15px 50px -10px rgba(84,255,70,.85); }
+  .btn svg { width: 18px; height: 18px; }
+
+  /* ---------- HERO ---------- */
+  .hero { position: relative; overflow: hidden; padding: 20px 0 120px; }
+  .hero::before {
+    content: ""; position: absolute; inset: 0; z-index: -2;
+    background: url("img/cases/hero-team-wide.jpg") center/cover no-repeat;
+    opacity: .38;
+  }
+  .hero::after {
+    content: ""; position: absolute; inset: 0; z-index: -1;
+    background:
+      radial-gradient(ellipse at top, rgba(7,27,12,.55), transparent 70%),
+      linear-gradient(180deg, rgba(5,8,6,.55) 0%, rgba(5,8,6,.8) 55%, var(--bg) 100%);
+  }
+  .nav { display: flex; align-items: center; justify-content: space-between; }
+  .nav img { height: 26px; width: auto; }
+  .nav .label { color: var(--muted); }
+  .hero-inner { margin-top: 72px; max-width: 760px; }
+  .hero h1 { font-size: clamp(42px, 9vw, 84px); font-weight: 700; margin-top: 18px; }
+  .hero .lead { font-size: 18px; color: #c9d3cb; max-width: 36em; margin: 24px 0 32px; }
+  .hero .lead b { color: var(--fg); font-weight: 600; }
+  .hero .note { font-size: 13px; color: var(--muted); margin-top: 14px; }
+
+  /* ---------- MARQUEE (igual ao site) ---------- */
+  .logos { position: relative; margin-top: -72px; padding: 28px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); overflow: hidden; }
+  .logos::before, .logos::after {
+    content: ""; position: absolute; top: 0; bottom: 0; width: 80px; z-index: 2; pointer-events: none;
+  }
+  .logos::before { left: 0; background: linear-gradient(90deg, var(--bg), transparent); }
+  .logos::after { right: 0; background: linear-gradient(-90deg, var(--bg), transparent); }
+  .marquee { display: flex; gap: 2.5rem; width: max-content; animation: marquee 30s linear infinite; }
+  .marquee .set { display: flex; align-items: center; gap: 2.5rem; flex-shrink: 0; }
+  .marquee img { height: 40px; width: auto; max-width: none; object-fit: contain; opacity: .8; filter: brightness(0) invert(1); user-select: none; }
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  @media (prefers-reduced-motion: reduce) { .marquee { animation-duration: 120s; } }
+
+  /* ---------- NÚMEROS / KNOW-HOW ---------- */
+  .stats { display: grid; grid-template-columns: 1fr 1fr; gap: 1px; background: var(--line); border: 1px solid var(--line); border-radius: var(--radius); overflow: hidden; margin-top: 36px; }
+  .stat { background: var(--bg); padding: 26px 20px; }
+  .stat b { display: block; font: 700 clamp(30px, 6vw, 48px)/1 "Space Grotesk", sans-serif; letter-spacing: -.03em; }
+  .stat span { display: block; margin-top: 10px; color: var(--muted); font-size: 14px; line-height: 1.4; }
+  .knowhow p { color: #c9d3cb; font-size: 17px; max-width: 40em; margin: 18px 0 0; }
+
+  /* ---------- SERVIÇOS ---------- */
+  .svc-grid { display: grid; gap: 16px; margin-top: 36px; }
+  .svc { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 28px 24px; }
+  .svc.main { background: radial-gradient(ellipse at top left, rgba(84,255,70,.14), transparent 60%), var(--card); border-color: rgba(84,255,70,.35); }
+  .svc h3 { font-size: 26px; font-weight: 700; margin: 10px 0 10px; }
+  .svc p { color: #c9d3cb; margin: 0 0 18px; }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; padding: 0; margin: 0; list-style: none; }
+  .chips li { font-size: 13px; font-weight: 500; padding: 7px 12px; border-radius: 999px; border: 1px solid var(--line); background: rgba(255,255,255,.03); }
+  .svc.main .chips li { border-color: rgba(84,255,70,.3); }
+
+  /* ---------- CASES ---------- */
+  .cases { display: grid; grid-auto-flow: column; grid-auto-columns: 78%; gap: 14px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 4px 20px 12px; margin: 36px -20px 0; scrollbar-width: none; }
+  .cases::-webkit-scrollbar { display: none; }
+  .case { scroll-snap-align: start; position: relative; border-radius: var(--radius); overflow: hidden; aspect-ratio: 4/5; border: 1px solid var(--line); background: var(--card); }
+  .case img { width: 100%; height: 100%; object-fit: cover; }
+  .case .cap { position: absolute; inset: auto 0 0 0; padding: 70px 18px 18px; background: linear-gradient(180deg, transparent, rgba(5,8,6,.92) 45%); }
+  .case h3 { font-size: 21px; font-weight: 700; }
+  .case .seg { font: 500 12px "JetBrains Mono", monospace; color: var(--neon); }
+  .case p { margin: 8px 0 0; font-size: 14px; color: #c9d3cb; line-height: 1.45; }
+  .swipe { font-size: 13px; color: var(--muted); margin-top: 6px; }
+
+  /* ---------- FORMULÁRIO ---------- */
+  .form-grid { display: grid; gap: 32px; align-items: start; }
+  .form-intro p { color: #c9d3cb; font-size: 17px; margin: 18px 0 0; }
+  .form-intro ul { list-style: none; padding: 0; margin: 24px 0 0; display: grid; gap: 12px; }
+  .form-intro li { display: flex; gap: 12px; color: #c9d3cb; }
+  .form-intro li::before { content: ""; flex: none; width: 8px; height: 8px; margin-top: 9px; border-radius: 50%; background: var(--neon); box-shadow: 0 0 12px var(--neon); }
+  .form-card { background: var(--card); border: 1px solid var(--line); border-radius: 24px; padding: 26px 20px; }
+  .field { display: grid; gap: 8px; margin-bottom: 20px; }
+  .field > label, .field > .q { font: 600 15px "Space Grotesk", sans-serif; letter-spacing: -.01em; }
+  input[type=text], input[type=tel] {
+    width: 100%; font: 500 16px "Inter", sans-serif; color: var(--fg);
+    padding: 15px 16px; border-radius: 12px; border: 1px solid #1e231f; background: #080c09;
+  }
+  input::placeholder { color: #5f6b61; }
+  input:focus { outline: none; border-color: var(--neon); }
+  .opts { display: grid; gap: 8px; }
+  .opts.two { grid-template-columns: 1fr 1fr; }
+  .opt { position: relative; }
+  .opt input { position: absolute; inset: 0; opacity: 0; margin: 0; cursor: pointer; z-index: 1; }
+  .opt span { display: flex; align-items: center; min-height: 48px; height: 100%; padding: 12px 14px; border-radius: 12px; border: 1px solid #1e231f; background: #080c09; font-size: 14px; font-weight: 500; line-height: 1.3; transition: all .12s; }
+  .opt input:checked + span { border-color: var(--neon); background: rgba(84,255,70,.1); color: var(--fg); box-shadow: inset 0 0 0 1px var(--neon); }
+  .opt input:focus-visible + span { outline: 2px solid var(--neon); outline-offset: 2px; }
+  .err { display: none; color: #ff6b6b; font-size: 13px; font-weight: 500; }
+  .field.invalid .err { display: block; }
+  .field.invalid input[type=text], .field.invalid input[type=tel] { border-color: #ff6b6b; }
+  .form-card .btn { width: 100%; margin-top: 4px; }
+  .legal { text-align: center; font-size: 12px; color: var(--muted); margin: 14px 0 0; }
+  .thanks { display: none; text-align: center; padding: 16px 4px; }
+  .thanks h3 { font-size: 30px; font-weight: 700; margin-bottom: 12px; }
+  .thanks p { color: #c9d3cb; margin: 0 0 22px; }
+  .form-card.sent form { display: none; }
+  .form-card.sent .thanks { display: block; }
+
+  footer { border-top: 1px solid var(--line); padding: 36px 0 110px; color: var(--muted); font-size: 13px; }
+  footer .wrap { display: flex; flex-wrap: wrap; gap: 14px 28px; align-items: center; justify-content: space-between; }
+  footer img { height: 20px; width: auto; }
+
+  .sticky-cta { position: fixed; left: 12px; right: 12px; bottom: 12px; z-index: 50; transform: translateY(150%); transition: transform .25s ease; }
+  .sticky-cta.show { transform: none; }
+  .sticky-cta .btn { width: 100%; }
+
+  @media (min-width: 760px) {
+    section { padding: 104px 0; }
+    .hero { padding-bottom: 150px; }
+    .hero-inner { margin-top: 110px; }
+    .logos { margin-top: -96px; }
+    .marquee, .marquee .set { gap: 3.5rem; }
+    .marquee img { height: 56px; }
+    .stats { grid-template-columns: repeat(4, 1fr); }
+    .stat { padding: 34px 28px; }
+    .svc-grid { grid-template-columns: 1.4fr 1fr; }
+    .svc.main { grid-row: span 2; padding: 40px 36px; }
+    .svc.main h3 { font-size: 34px; }
+    .cases { grid-auto-flow: row; grid-template-columns: repeat(4, 1fr); grid-auto-columns: auto; overflow: visible; margin: 40px 0 0; padding: 0; }
+    .swipe { display: none; }
+    .form-grid { grid-template-columns: .85fr 1.15fr; gap: 56px; }
+    .form-card { padding: 36px; }
+    footer { padding-bottom: 36px; }
+    .sticky-cta { display: none; }
+  }
+
+  /* equação do hero */
+  .hero h1 { font-size: clamp(28px, 7.4vw, 64px); }
+  .stat b { white-space: nowrap; font-size: clamp(28px, 4.4vw, 46px); }
+  @media (min-width: 1000px) { .eq { flex-wrap: nowrap; } }
+  @media (min-width: 760px) { .hero-inner { max-width: 1080px; } .hero .lead { max-width: 40em; } }
+  .eq { display: flex; flex-wrap: wrap; align-items: center; gap: 8px 10px; }
+  .term { display: inline-block; padding: .08em .38em .12em; border: 1px solid rgba(84,255,70,.4); border-radius: .3em; background: rgba(12,17,13,.7); backdrop-filter: blur(6px); }
+  .op { color: var(--neon); font-weight: 500; }
+  .result { display: block; margin-top: .3em; }
+
+  /* problema */
+  .pain { display: grid; gap: 12px; margin-top: 32px; }
+  .pain p { margin: 0; padding: 22px 22px 22px 56px; position: relative; background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); color: #c9d3cb; font-size: 16px; }
+  .pain p::before { content: "×"; position: absolute; left: 20px; top: 18px; font: 700 22px/1 "Space Grotesk", sans-serif; color: #ff6b6b; }
+  .pain b { color: var(--fg); font-weight: 600; }
+
+  /* equação */
+  .eq-grid { display: grid; gap: 10px; margin-top: 36px; align-items: stretch; }
+  .piece { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 26px 22px; }
+  .piece h3 { font-size: 24px; font-weight: 700; margin: 10px 0 10px; }
+  .piece p { margin: 0; color: #c9d3cb; font-size: 15px; }
+  .plus { text-align: center; font: 700 30px/1 "Space Grotesk", sans-serif; color: var(--neon); }
+  .equals { margin-top: 10px; border-radius: var(--radius); border: 1px solid rgba(84,255,70,.35); background: radial-gradient(ellipse at top left, rgba(84,255,70,.14), transparent 60%), var(--card); padding: 26px 22px; }
+  .equals-head { display: flex; gap: 16px; align-items: center; }
+  .equals-head .sign { font: 700 54px/1 "Space Grotesk", sans-serif; color: var(--neon); }
+  .equals-head h3 { font-size: 22px; font-weight: 700; margin-top: 6px; }
+  .equals .stats { margin-top: 22px; }
+  .equals .stat { background: transparent; }
+  .equals .stats { background: rgba(255,255,255,.07); }
+  .equals .stat { background: #0d140e; }
+  @media (min-width: 760px) {
+    .pain { grid-template-columns: repeat(3, 1fr); gap: 16px; }
+    .eq-grid { grid-template-columns: 1fr auto 1fr auto 1fr; align-items: center; gap: 14px; }
+    .piece { height: 100%; padding: 30px 26px; }
+    .equals { margin-top: 16px; padding: 34px; }
+  }
+
+  /* versão B */
+  .two-lines span { display: block; }
+  .two-lines span.hl { display: inline; }
+  .hero h1.two-lines { font-size: clamp(36px, 8.4vw, 78px); }
+  .hl:not(.neon) { color: var(--fg); background: linear-gradient(transparent 62%, rgba(84,255,70,.35) 62%, rgba(84,255,70,.35) 92%, transparent 92%); }
+  .fronts { display: grid; gap: 10px; margin-top: 36px; }
+  .front { background: var(--card); border: 1px solid var(--line); border-radius: var(--radius); padding: 28px 22px; }
+  .front.hot { border-color: rgba(84,255,70,.35); background: radial-gradient(ellipse at top right, rgba(84,255,70,.12), transparent 60%), var(--card); }
+  .front h3 { font-size: 26px; font-weight: 700; margin: 10px 0 12px; }
+  .front p { color: #c9d3cb; margin: 0 0 18px; font-size: 15px; }
+  .ticks { list-style: none; padding: 0; margin: 0; display: grid; gap: 8px; }
+  .ticks li { display: flex; gap: 10px; font-size: 15px; }
+  .ticks li::before { content: "✓"; color: var(--neon); font-weight: 700; }
+  @media (min-width: 760px) {
+    .pain.two { grid-template-columns: 1fr 1fr; }
+    .fronts { grid-template-columns: 1fr auto 1fr; align-items: center; gap: 16px; }
+    .front { height: 100%; padding: 36px 32px; }
+    .front h3 { font-size: 30px; }
+  }
+
+  /* blocos claros intercalados */
+  .light { background: #f3f5f1; color: #0b0f0c; }
+  .light .label { color: #128a2c; }
+  .light .neon { background: linear-gradient(135deg, #16a334, #00977a); -webkit-background-clip: text; background-clip: text; color: transparent; }
+  .light .pain p { background: #fff; border-color: #dfe4dd; color: #3d4740; box-shadow: 0 10px 30px -18px rgba(5,8,6,.25); }
+  .light .pain b { color: #0b0f0c; }
+  .light .pain p::before { color: #e0383e; }
+  .light .case { border-color: #dfe4dd; box-shadow: 0 18px 40px -22px rgba(5,8,6,.45); }
+  .light .swipe { color: #5d675f; }
+  .light .case .cap { color: var(--fg); }
+  .light .case .seg { color: var(--neon); }
+
+  /* ---- duas frentes (v2) ---- */
+  .duo-intro { color: #b9c4bb; font-size: 17px; max-width: 38em; margin: 18px 0 0; }
+  .duo { display: grid; gap: 8px; margin-top: 48px; }
+  .duo-col { position: relative; padding: 8px 0 8px; }
+  .duo-num {
+    display: block; font: 700 96px/.8 "Space Grotesk", sans-serif; letter-spacing: -.05em;
+    color: transparent; -webkit-text-stroke: 1px rgba(84,255,70,.45); margin-bottom: 22px;
+  }
+  .duo-col h3 { font-size: clamp(30px, 4vw, 42px); font-weight: 700; margin: 12px 0 16px; }
+  .duo-col p { color: #b9c4bb; font-size: 16px; max-width: 30em; margin: 0 0 22px; }
+  .tags { list-style: none; padding: 0; margin: 0; display: flex; flex-wrap: wrap; gap: 6px 0; }
+  .tags li { font-size: 14px; font-weight: 500; color: var(--fg); }
+  .tags li:not(:last-child)::after { content: "/"; color: var(--neon); margin: 0 12px; opacity: .8; }
+  .duo-link { position: relative; height: 72px; display: grid; place-items: center; }
+  .duo-link::before { content: ""; position: absolute; left: 0; right: 0; top: 50%; height: 1px; background: linear-gradient(90deg, transparent, rgba(84,255,70,.5), transparent); }
+  .duo-link span {
+    position: relative; width: 52px; height: 52px; border-radius: 50%; display: grid; place-items: center;
+    background: var(--bg); border: 1px solid var(--neon); color: var(--neon);
+    font: 600 26px/1 "Space Grotesk", sans-serif; box-shadow: 0 0 30px -6px rgba(84,255,70,.6);
+  }
+  .result { margin-top: 64px; padding-top: 36px; border-top: 1px solid var(--line); display: grid; gap: 28px; }
+  .result-head p { font: 600 22px/1.25 "Space Grotesk", sans-serif; letter-spacing: -.02em; margin: 10px 0 0; max-width: 14em; }
+  .result-stats { display: grid; grid-template-columns: 1fr 1fr; gap: 28px 20px; }
+  .result-stats b { display: block; font: 700 clamp(34px, 5vw, 54px)/1 "Space Grotesk", sans-serif; letter-spacing: -.04em; white-space: nowrap; }
+  @media (max-width: 899px) { .result-stats > div:last-child { grid-column: 1 / -1; } }
+  .result-stats span { display: block; margin-top: 10px; color: var(--muted); font-size: 14px; line-height: 1.4; }
+  @media (min-width: 900px) {
+    .duo { grid-template-columns: 1fr 120px 1fr; gap: 0; margin-top: 64px; }
+    .duo-link { height: auto; }
+    .duo-link::before { left: 50%; right: auto; top: 0; bottom: 0; width: 1px; height: auto; background: linear-gradient(180deg, transparent, rgba(84,255,70,.5), transparent); }
+    .duo-num { font-size: 132px; }
+    .result { grid-template-columns: 260px 1fr; align-items: end; margin-top: 88px; }
+    .result-stats { grid-template-columns: repeat(3, 1fr); gap: 0; }
+    .result-stats > div { padding: 0 24px; border-left: 1px solid var(--line); }
+  }
+
+  /* ---- slider de trabalhos ---- */
+  .works-sec { padding-top: 0; overflow: hidden; }
+  .works { position: relative; margin-top: 40px; }
+  .works::before, .works::after { content: ""; position: absolute; top: 0; bottom: 0; width: 60px; z-index: 2; pointer-events: none; }
+  .works::before { left: 0; background: linear-gradient(90deg, var(--bg), transparent); }
+  .works::after { right: 0; background: linear-gradient(-90deg, var(--bg), transparent); }
+  .works-track { gap: 1.25rem; animation-duration: 60s; }
+  .works-track .set { gap: 1.25rem; }
+  .works figure { margin: 0; width: 240px; aspect-ratio: 4/5; flex-shrink: 0; border-radius: 18px; overflow: hidden; border: 1px solid var(--line); background: var(--card); }
+  .works figure img { width: 100%; height: 100%; object-fit: cover; filter: none; opacity: 1; }
+  .works:hover .works-track { animation-play-state: paused; }
+  @media (min-width: 760px) {
+    .works::before, .works::after { width: 160px; }
+    .works figure { width: 340px; }
+    .works-track, .works-track .set { gap: 1.5rem; }
+  }
+
+  /* ---- formulário compacto ---- */
+  .form-card .field { margin-bottom: 18px; }
+  .form-card .opts, .form-card .opts.two { display: flex; flex-wrap: wrap; gap: 8px; grid-template-columns: none; }
+  .form-card .opt span {
+    min-height: 0; height: auto; padding: 9px 15px; border-radius: 999px; font-size: 14px; line-height: 1.2;
+  }
+  .form-card .opt input:checked + span { background: var(--neon); color: var(--neon-ink); border-color: var(--neon); box-shadow: none; font-weight: 600; }
+  .form-card .opt:hover span { border-color: #3a463c; }
+  .row2 { display: grid; gap: 0 12px; }
+  @media (min-width: 560px) { .row2 { grid-template-columns: 1fr 1fr; } }
+
+  /* ---- selects ---- */
+  .select { position: relative; }
+  .select::after {
+    content: ""; position: absolute; right: 18px; top: 50%; width: 7px; height: 7px; margin-top: -6px;
+    border-right: 2px solid var(--neon); border-bottom: 2px solid var(--neon); transform: rotate(45deg); pointer-events: none;
+  }
+  .select select {
+    width: 100%; appearance: none; -webkit-appearance: none; cursor: pointer;
+    font: 500 16px "Inter", sans-serif; color: var(--fg);
+    padding: 15px 40px 15px 16px; border-radius: 12px; border: 1px solid #1e231f; background: #080c09;
+  }
+  .select select.empty { color: #5f6b61; }
+  .select select:focus { outline: none; border-color: var(--neon); }
+  .select option { color: #0b0f0c; background: #fff; }
+  .field.invalid .select select { border-color: #ff6b6b; }
+  .form-card .field { margin-bottom: 16px; }
+
+  /* logos com peso visual equilibrado */
+  .logos .marquee img { height: calc(var(--h, 40px) * .78); }
+  @media (min-width: 760px) { .logos .marquee img { height: var(--h, 48px); } }
+  .logos .marquee, .logos .marquee .set { gap: 3rem; }
+  @media (min-width: 760px) { .logos .marquee, .logos .marquee .set { gap: 4.5rem; } }
+
+  /* ---- quem lidera ---- */
+  .founder { display: grid; gap: 36px; align-items: center; }
+  .founder-photo { position: relative; margin: 0; border-radius: 24px; overflow: hidden; border: 1px solid rgba(84,255,70,.35); aspect-ratio: 4/5; max-width: 440px; box-shadow: 0 30px 80px -30px rgba(84,255,70,.25); }
+  .founder-photo img { width: 100%; height: 100%; object-fit: cover; }
+  .founder-photo figcaption { position: absolute; left: 0; right: 0; bottom: 0; padding: 60px 22px 20px; background: linear-gradient(180deg, transparent, rgba(5,8,6,.9)); }
+  .founder-photo b { display: block; font: 700 20px "Space Grotesk", sans-serif; letter-spacing: -.02em; }
+  .founder-photo span { font: 500 12px "JetBrains Mono", monospace; color: var(--neon); }
+  .founder-text p { color: #c9d3cb; font-size: 17px; margin: 18px 0 0; max-width: 34em; }
+  .founder-text .founder-promise { color: var(--fg); font-weight: 600; padding-left: 16px; border-left: 2px solid var(--neon); }
+  @media (min-width: 900px) { .founder { grid-template-columns: 420px 1fr; gap: 72px; } }
+
+  /* ---- formulário em bloco claro ---- */
+  .light .form-intro p, .light .form-intro li { color: #3d4740; }
+  .light .form-intro li::before { box-shadow: none; background: #16a334; }
+  .light .form-card { color: var(--fg); box-shadow: 0 30px 70px -30px rgba(5,8,6,.55); }
+  .light .form-card .neon { background: var(--grad); -webkit-background-clip: text; background-clip: text; color: transparent; }
+
+
+  /* ---- segmentos ---- */
+  .segs { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 14px; margin: -8px 0 30px; }
+  .segs ul { list-style: none; display: flex; flex-wrap: wrap; gap: 8px; margin: 0; padding: 0; }
+  .segs li { font: 600 14px "Space Grotesk", sans-serif; padding: 7px 14px; border-radius: 999px; border: 1px solid rgba(84,255,70,.45); background: rgba(5,8,6,.55); backdrop-filter: blur(6px); }
+  .spec { margin-bottom: 88px; }
+  .spec-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 12px; margin-top: 32px; }
+  .spec-grid article { background: #fff; border: 1px solid #dfe4dd; border-radius: 18px; padding: 22px 18px; box-shadow: 0 10px 30px -18px rgba(5,8,6,.25); }
+  .spec-n { font: 500 12px "JetBrains Mono", monospace; color: #128a2c; }
+  .spec-grid h3 { font-size: 22px; font-weight: 700; margin: 8px 0 8px; color: #0b0f0c; }
+  .spec-grid p { margin: 0; font-size: 13px; color: #5d675f; line-height: 1.45; }
+  @media (min-width: 900px) { .spec-grid { grid-template-columns: repeat(4, 1fr); gap: 16px; } .spec-grid article { padding: 28px 24px; } .spec-grid h3 { font-size: 26px; } }
+</style>
+</head>
+<body>
+
+<!-- ======================= HERO ======================= -->
+<header class="hero">
+  <div class="wrap">
+    <nav class="nav">
+      <img src="img/logo-notorium.webp" alt="Notorium">
+      <span class="label">Vitória · ES</span>
+    </nav>
+
+    <div class="hero-inner">
+      <span class="label">/ Agência de performance · Vitória, ES</span>
+      <h1 class="two-lines">
+        <span>Mais <span class="hl">estratégia</span> no conteúdo.</span>
+        <span>Mais <span class="hl neon">resultado</span> no tráfego.</span>
+      </h1>
+      <p class="lead">Um time especialista em conteúdo e outro em tráfego, trabalhando juntos na mesma agência pelo crescimento da sua empresa. Só em 2026, já são <b>+R$ 10 milhões em receita</b> gerados para nossos clientes.</p>
+      <div class="segs">
+        <span class="label">Especializados em</span>
+        <ul><li>Restaurantes</li><li>Saúde</li><li>Varejo</li><li>Construção civil</li></ul>
+      </div>
+      <a class="btn" href="#diagnostico">Quero meu diagnóstico gratuito
+        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M7 7h10v10"/><path d="M7 17 17 7"/></svg>
+      </a>
+      <p class="note">Leva um minuto. A resposta chega no seu WhatsApp.</p>
+    </div>
+  </div>
+</header>
+
+<!-- ================ LOGOS EM LOOP ================ -->
+<div class="logos" aria-label="Empresas atendidas pela Notorium">
+  <div class="marquee" id="marquee">
+    <div class="set">
+      <img src="img/logos/via-forte.webp" alt="Via Forte Construtora" style="--h:36px">
+      <img src="img/logos/vix-food-park.webp" alt="Vix Food Park" style="--h:52px">
+      <img src="img/logos/sorridents.webp" alt="Sorridents" style="--h:28px">
+      <img src="img/logos/proton.webp" alt="Proton" style="--h:44px">
+      <img src="img/logos/o2.webp" alt="O2 Farmácia & Manipulação" style="--h:46px">
+      <img src="img/logos/mcg.webp" alt="MCG Engenharia" style="--h:52px">
+      <img src="img/logos/ilha-do-caranguejo.webp" alt="Ilha do Caranguejo" style="--h:41px">
+      <img src="img/logos/green-station.webp" alt="Green Station" style="--h:46px">
+      <img src="img/logos/giolaser.webp" alt="GiOlaser" style="--h:24px">
+      <img src="img/logos/mundial-maquinas.webp" alt="Mundial Máquinas" style="--h:39px">
+      <img src="img/logos/abreu-judice.webp" alt="Abreu Júdice Advogados" style="--h:42px">
+      <img src="img/logos/farofa.webp" alt="Farofa Churrascaria" style="--h:27px">
+      <img src="img/logos/rancho-beliskao.webp" alt="Rancho Beliskão" style="--h:52px">
+      <img src="img/logos/fortway.webp" alt="Fortway" style="--h:24px">
+    </div>
+    <!-- a segunda cópia é gerada pelo script, para o loop não ter emenda -->
+  </div>
+</div>
+
+<main>
+
+<!-- ===================== O PROBLEMA ===================== -->
+<section class="light">
+  <div class="wrap">
+    <span class="label">/ O problema</span>
+    <h2 style="margin-top:14px">Uma frente sem a outra <span class="neon">custa caro.</span></h2>
+    <div class="pain two">
+      <p><b>Conteúdo sem estratégia vira enfeite.</b> O perfil fica bonito, a agenda continua vazia e ninguém sabe dizer quanto aquilo vendeu.</p>
+      <p><b>Tráfego sem conteúdo bom vira gasto.</b> O anúncio aparece pra muita gente, mas não convence. O custo por cliente sobe todo mês.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== AS DUAS FRENTES ===================== -->
+<section class="duo-sec">
+  <div class="wrap">
+    <span class="label">/ Dois times, uma agência</span>
+    <h2 style="margin-top:14px">Dois times especialistas.<br><span class="neon">Uma agência só.</span></h2>
+    <p class="duo-intro">Cada frente tem o seu próprio time, com gente dedicada só àquela especialidade. Os dois trabalham dentro da mesma empresa, trocam dados toda semana e respondem pelo mesmo resultado: o seu faturamento.</p>
+
+    <div class="duo">
+      <article class="duo-col">
+        <span class="duo-num" aria-hidden="true">01</span>
+        <span class="label">Time de Conteúdo · estrategistas de conteúdo</span>
+        <h3>Mais estratégia<br>no conteúdo.</h3>
+        <p>Cada post e cada vídeo têm um papel no caminho até a venda. A gente planeja, roteiriza, grava e edita pensando em quem vai comprar, e não só em quem vai curtir.</p>
+        <ul class="tags"><li>Social media</li><li>Roteiro, captação e edição</li><li>Posicionamento</li></ul>
+      </article>
+
+      <div class="duo-link" aria-hidden="true"><span>+</span></div>
+
+      <article class="duo-col">
+        <span class="duo-num" aria-hidden="true">02</span>
+        <span class="label">Time de Performance · gestores de tráfego</span>
+        <h3>Mais resultado<br>no tráfego.</h3>
+        <p>O anúncio usa o conteúdo que já funciona no orgânico e chega em quem decide a compra. O relatório mostra custo por cliente, vendas e retorno sobre o investimento.</p>
+        <ul class="tags"><li>Meta Ads</li><li>Google Ads</li><li>Captação de leads</li><li>CAC e dashboards</li></ul>
+      </article>
+    </div>
+
+    <div class="result">
+      <div class="result-head">
+        <span class="label">= Resultado até o momento em 2026</span>
+        <p>Know-how de muito resultado.</p>
+      </div>
+      <div class="result-stats">
+        <div><b class="neon">+R$ 10 mi</b><span>gerados em receita para clientes</span></div>
+        <div><b class="neon">+100</b><span>empresas atendidas</span></div>
+        <div><b class="neon">+3 mi</b><span>pessoas impactadas por mês</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ================== SLIDER DE TRABALHOS ================== -->
+<section class="works-sec">
+  <div class="wrap">
+    <span class="label">/ Posicionamento forte</span>
+    <h2 style="margin-top:14px">Para a sua marca gerar <span class="neon">resultado.</span></h2>
+  </div>
+  <div class="works" aria-label="Trabalhos da Notorium para clientes">
+    <div class="marquee works-track">
+      <div class="set">
+        <figure><img src="img/trabalhos/work-1.webp" alt="Trabalho Notorium 1" loading="lazy"></figure>
+        <figure><img src="img/trabalhos/work-2.webp" alt="Trabalho Notorium 2" loading="lazy"></figure>
+        <figure><img src="img/trabalhos/work-3.webp" alt="Trabalho Notorium 3" loading="lazy"></figure>
+        <figure><img src="img/trabalhos/work-4.webp" alt="Trabalho Notorium 4" loading="lazy"></figure>
+        <figure><img src="img/trabalhos/work-5.webp" alt="Trabalho Notorium 5" loading="lazy"></figure>
+        <figure><img src="img/trabalhos/work-6.webp" alt="Trabalho Notorium 6" loading="lazy"></figure>
+        <figure><img src="img/trabalhos/work-7.webp" alt="Trabalho Notorium 7" loading="lazy"></figure>
+        <figure><img src="img/trabalhos/work-9.webp" alt="Trabalho Notorium 8" loading="lazy"></figure>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ======================= CASES ======================= -->
+<section class="light">
+  <div class="wrap">
+    <span class="label">/ Cases</span>
+    <h2 style="margin-top:14px">Marcas que confiaram na <span class="neon">nossa execução.</span></h2>
+    <div class="cases">
+      <article class="case">
+        <img src="img/cases/ilha-caranguejo.jpg" alt="Ilha do Caranguejo" loading="lazy">
+        <div class="cap"><span class="seg">Restaurante</span><h3>Ilha do Caranguejo</h3><p>Campanhas de performance em tráfego para o restaurante mais capixaba e mais animado do planeta.</p></div>
+      </article>
+      <article class="case">
+        <img src="img/cases/sorridents.jpg" alt="Sorridents" loading="lazy">
+        <div class="cap"><span class="seg">Odontologia · franquia</span><h3>Sorridents</h3><p>Captação de leads, performance e social media para praticamente todas as unidades do Espírito Santo.</p></div>
+      </article>
+      <article class="case">
+        <img src="img/cases/giolaser.jpg" alt="GiOlaser" loading="lazy">
+        <div class="cap"><span class="seg">Estética · franquia</span><h3>GiOlaser</h3><p>Captação de leads, performance e social media com foco em agenda, recorrência e vendas.</p></div>
+      </article>
+      <article class="case">
+        <img src="img/cases/conferencia-ouca.jpg" alt="Conferência Ouça" loading="lazy">
+        <div class="cap"><span class="seg">Evento nacional</span><h3>Conferência Ouça</h3><p>Mais de 100 mil pessoas impactadas em todos os estados do Brasil. Tráfego, social media e supervisão comercial.</p></div>
+      </article>
+    </div>
+    <p class="swipe">Arraste para o lado →</p>
+  </div>
+</section>
+
+<!-- ===================== QUEM LIDERA ===================== -->
+<section class="founder-sec">
+  <div class="wrap founder">
+    <figure class="founder-photo">
+      <img src="img/renan-domingues.jpg" alt="Renan Domingues, da Notorium">
+      <figcaption><b>Renan Domingues</b><span>Fundador da Notorium</span></figcaption>
+    </figure>
+    <div class="founder-text">
+      <span class="label">/ Quem lidera</span>
+      <h2 style="margin-top:14px">Por trás dos dois times, <span class="neon">oito anos desenhando crescimento.</span></h2>
+      <p>Fundador da Notorium, Renan Domingues trabalha há oito anos com marcas capixabas e nacionais: grandes redes de restaurantes, grupos da construção civil do Espírito Santo e redes de odontologia e beleza entre as maiores da América Latina.</p>
+      <p>Formou-se com nomes de referência do marketing digital brasileiro, como Pedro Sobral e Ícaro de Carvalho, fundador d'O Novo Mercado, e faz parte do mastermind da Craft, com Vinhas.</p>
+      <!-- [CONFIRMAR] Se for verdade para todos os clientes, trocar por: "revisa cada campanha antes de ir ao ar". -->
+      <p class="founder-promise">É ele quem acompanha de perto a estratégia de cada cliente da Notorium.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ==================== FORMULÁRIO ==================== -->
+<section id="diagnostico" class="light">
+  <div class="wrap form-grid">
+    <div class="form-intro">
+      <span class="label">/ Diagnóstico gratuito</span>
+      <h2 style="margin-top:14px">Onde o seu negócio está <span class="neon">perdendo venda?</span></h2>
+      <p>Antes de qualquer proposta, a gente analisa os seus anúncios e o seu Instagram e te mostra o que está travando o crescimento.</p>
+      <ul>
+        <li>Resposta em até 1 dia útil, pelo WhatsApp.</li>
+        <li>Quem analisa são os especialistas dos nossos times de conteúdo e de tráfego.</li>
+        <li>Sem proposta padrão. Se não fizer sentido, você fica com o diagnóstico.</li>
+      </ul>
+    </div>
+
+    <div class="form-card" id="formCard">
+      <form id="leadForm" novalidate>
+        <div class="row2">
+          <div class="field" data-req>
+            <label for="nome">Seu nome</label>
+            <input id="nome" name="nome" type="text" autocomplete="name" placeholder="Como a gente te chama">
+            <span class="err">Preencha seu nome.</span>
+          </div>
+          <div class="field" data-req>
+            <label for="whatsapp">WhatsApp</label>
+            <input id="whatsapp" name="whatsapp" type="tel" inputmode="tel" autocomplete="tel" placeholder="(27) 99999-9999">
+            <span class="err">Coloque um WhatsApp com DDD.</span>
+          </div>
+        </div>
+        <div class="field" data-req>
+          <label for="instagram">@ do Instagram ou site da empresa</label>
+          <input id="instagram" name="instagram" type="text" autocapitalize="off" placeholder="@suaempresa">
+          <span class="err">A gente precisa disso pra fazer o diagnóstico.</span>
+        </div>
+
+        <!-- [CONFIRMAR] Ajuste as faixas de investimento em anúncio ao ticket da Notorium. -->
+        <div class="row2">
+          <div class="field" data-req>
+            <label for="segmento">Segmento</label>
+            <div class="select">
+              <select id="segmento" name="segmento">
+                <option value="" selected disabled>Selecione</option>
+                <option value="Restaurante">Restaurante</option>
+                <option value="Saúde">Saúde</option>
+                <option value="Varejo">Varejo</option>
+                <option value="Construção civil">Construção civil</option>
+                <option value="Outro">Outro</option>
+              </select>
+            </div>
+            <span class="err">Escolha uma opção.</span>
+          </div>
+          <div class="field" data-req>
+            <label for="faturamento">Faturamento mensal</label>
+            <div class="select">
+              <select id="faturamento" name="faturamento">
+                <option value="" selected disabled>Selecione</option>
+                <option value="R$ 80 a 200 mil">R$ 80–200 mil</option>
+                <option value="R$ 200 a 500 mil">R$ 200–500 mil</option>
+                <option value="R$ 500 mil a 1 milhão">R$ 500 mil–1 milhão</option>
+                <option value="Acima de R$ 1 milhão">+R$ 1 milhão</option>
+              </select>
+            </div>
+            <span class="err">Escolha uma opção.</span>
+          </div>
+        </div>
+        <div class="row2">
+          <div class="field" data-req>
+            <label for="investimento">Investimento mensal em anúncios</label>
+            <div class="select">
+              <select id="investimento" name="investimento">
+                <option value="" selected disabled>Selecione</option>
+                <option value="Não investe">Ainda não invisto</option>
+                <option value="Até R$ 3 mil">Até R$ 3 mil</option>
+                <option value="R$ 3 a 10 mil">R$ 3–10 mil</option>
+                <option value="Mais de R$ 10 mil">+R$ 10 mil</option>
+              </select>
+            </div>
+            <span class="err">Escolha uma opção.</span>
+          </div>
+          <div class="field" data-req>
+            <label for="prioridade">O que você mais precisa?</label>
+            <div class="select">
+              <select id="prioridade" name="prioridade">
+                <option value="" selected disabled>Selecione</option>
+                <option value="Mais clientes com tráfego">Tráfego pago</option>
+                <option value="Conteúdo e redes sociais">Conteúdo</option>
+                <option value="Os dois">Os dois</option>
+              </select>
+            </div>
+            <span class="err">Escolha uma opção.</span>
+          </div>
+        </div>
+
+        <button class="btn" type="submit">Quero meu diagnóstico</button>
+        <!-- [CONFIRMAR] link da política de privacidade -->
+        <p class="legal">Seus dados ficam só com a Notorium. <a href="politica-de-privacidade.html">Política de privacidade</a>.</p>
+      </form>
+
+      <div class="thanks" role="status" aria-live="polite">
+        <h3>Recebido. <span class="neon">Agora é com a gente.</span></h3>
+        <p>Em até 1 dia útil alguém do nosso time te chama no WhatsApp com o diagnóstico.</p>
+        <a class="btn" id="waBtn" href="#" target="_blank" rel="noopener">Adiantar pelo WhatsApp</a>
+        <p class="legal"><a id="igLink" href="#" target="_blank" rel="noopener">Enquanto isso, veja nosso Instagram</a></p>
+      </div>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <div class="wrap">
+    <img src="img/logo-notorium.webp" alt="Notorium">
+    <span>Edifício Omni Office · R. Gelu Vervloet dos Santos, 500 · Jardim Camburi, Vitória/ES</span>
+    <a href="politica-de-privacidade.html">Política de privacidade</a>
+  </div>
+</footer>
+
+<div class="sticky-cta" id="sticky"><a class="btn" href="#diagnostico">Quero meu diagnóstico gratuito</a></div>
+
+<script>
+(function () {
+  var C = window.LP_CONFIG;
+
+  // Loop dos logos: duplica o conjunto para a animação de -50% fechar sem emenda.
+  document.querySelectorAll('.marquee').forEach(function (mq) {
+    var copy = mq.querySelector('.set').cloneNode(true);
+    copy.setAttribute('aria-hidden', 'true');
+    copy.querySelectorAll('img').forEach(function (i) { i.alt = ''; });
+    mq.appendChild(copy);
+  });
+
+  // Barra fixa no celular: aparece depois do hero e some perto do formulário.
+  var sticky = document.getElementById('sticky');
+  var hero = document.querySelector('.hero');
+  var formSec = document.getElementById('diagnostico');
+  window.addEventListener('scroll', function () {
+    var pastHero = hero.getBoundingClientRect().bottom < 0;
+    var r = formSec.getBoundingClientRect();
+    var nearForm = r.top < window.innerHeight && r.bottom > 0;
+    sticky.classList.toggle('show', pastHero && !nearForm);
+  }, { passive: true });
+
+  // UTMs e fbclid, para saber de qual anúncio veio o lead.
+  var qs = new URLSearchParams(location.search), tracking = {};
+  ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','fbclid'].forEach(function (k) {
+    if (qs.get(k)) tracking[k] = qs.get(k);
+  });
+
+  // Máscara de telefone.
+  var tel = document.getElementById('whatsapp');
+  tel.addEventListener('input', function () {
+    var d = tel.value.replace(/\D/g, '').slice(0, 11);
+    if (d.length > 10) tel.value = '(' + d.slice(0,2) + ') ' + d.slice(2,7) + '-' + d.slice(7);
+    else if (d.length > 6) tel.value = '(' + d.slice(0,2) + ') ' + d.slice(2,6) + '-' + d.slice(6);
+    else if (d.length > 2) tel.value = '(' + d.slice(0,2) + ') ' + d.slice(2);
+    else tel.value = d;
+  });
+
+  var form = document.getElementById('leadForm');
+  function valueOf(field) {
+    if (field.querySelector('input[type=radio]')) {
+      var r = field.querySelector('input[type=radio]:checked'); return r ? r.value : '';
+    }
+    return (field.querySelector('select, input').value || '').trim();
+  }
+  // Tira o erro enquanto a pessoa digita (no 'input'), para o layout não pular no meio de um toque.
+  function clearErr(e) { var f = e.target.closest('.field'); if (f) f.classList.remove('invalid'); }
+  form.querySelectorAll('select').forEach(function (sel) {
+    sel.classList.add('empty');
+    sel.addEventListener('change', function () { sel.classList.toggle('empty', !sel.value); });
+  });
+  form.addEventListener('input', clearErr);
+  form.addEventListener('change', clearErr);
+
+  form.addEventListener('submit', function (e) {
+    e.preventDefault();
+    var first = null;
+    form.querySelectorAll('.field[data-req]').forEach(function (f) {
+      var v = valueOf(f), input = f.querySelector('select, input');
+      var bad = !v || (input.id === 'whatsapp' && v.replace(/\D/g, '').length < 10);
+      f.classList.toggle('invalid', bad);
+      if (bad && !first) first = f;
+    });
+    if (first) { first.scrollIntoView({ behavior: 'smooth', block: 'center' }); return; }
+
+    var fd = new FormData(form);
+    var lead = {
+      nome: fd.get('nome'),
+      whatsapp: '55' + String(fd.get('whatsapp')).replace(/\D/g, ''),
+      instagram_ou_site: String(fd.get('instagram')).trim(),
+      segmento: fd.get('segmento'),
+      faturamento: fd.get('faturamento'),
+      investimento_anuncios: fd.get('investimento'),
+      prioridade: fd.get('prioridade'),
+      pagina: location.href.split('?')[0],
+      enviado_em: new Date().toISOString()
+    };
+    Object.assign(lead, tracking);
+
+    if (C.webhookUrl) {
+      try {
+        // Formato esperado pela função webhook-leads do CRM Notorium
+        var ig = /^@|^[a-z0-9._]+$/i.test(lead.instagram_ou_site) && lead.instagram_ou_site.indexOf('.') === -1 ? lead.instagram_ou_site : '';
+        var crm = {
+          nome: lead.nome,
+          whatsapp: lead.whatsapp,
+          instagram: ig,
+          empresa: lead.instagram_ou_site,
+          segmento: lead.segmento,
+          faturamento: lead.faturamento,
+          motivo: 'Prioridade: ' + lead.prioridade + ' · Investe em anúncios: ' + lead.investimento_anuncios,
+          source: 'lp-diagnostico',
+          page_url: location.href,
+          investimento_anuncios: lead.investimento_anuncios,
+          prioridade: lead.prioridade,
+          utm: tracking
+        };
+        fetch(C.webhookUrl, { method: 'POST', keepalive: true,
+          headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(crm) }).catch(function () {});
+      } catch (err) {}
+    }
+    if (window.fbq) fbq('track', 'Lead', { content_name: 'Diagnóstico gratuito', content_category: lead.segmento });
+
+    var msg = 'Oi! Sou ' + lead.nome + ' e pedi o diagnóstico gratuito.\n' +
+              'Empresa: ' + lead.instagram_ou_site + '\n' +
+              'Segmento: ' + lead.segmento + '\n' +
+              'Faturamento: ' + lead.faturamento + '\n' +
+              'Investimento em anúncios: ' + lead.investimento_anuncios + '\n' +
+              'Prioridade: ' + lead.prioridade;
+    document.getElementById('waBtn').href = 'https://wa.me/' + C.whatsapp + '?text=' + encodeURIComponent(msg);
+    document.getElementById('igLink').href = 'https://instagram.com/' + C.instagram;
+    document.getElementById('formCard').classList.add('sent');
+    formSec.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+})();
+</script>
+</body>
+</html>
