@@ -85,19 +85,25 @@
   .hero::before {
     content: ""; position: absolute; inset: 0; z-index: -2;
     background: url("img/cases/hero-team-wide.jpg") center/cover no-repeat;
-    opacity: .38;
+    opacity: .8;
   }
   .hero::after {
     content: ""; position: absolute; inset: 0; z-index: -1;
     background:
-      radial-gradient(ellipse at top, rgba(7,27,12,.55), transparent 70%),
-      linear-gradient(180deg, rgba(5,8,6,.55) 0%, rgba(5,8,6,.8) 55%, var(--bg) 100%);
+      linear-gradient(180deg, rgba(5,8,6,.55) 0%, rgba(5,8,6,.35) 25%, rgba(5,8,6,.55) 75%, var(--bg) 100%),
+      rgba(5,8,6,.55);
   }
   .nav { display: flex; align-items: center; justify-content: space-between; }
   .nav img { height: 26px; width: auto; }
   .nav .label { color: var(--muted); }
   .hero-inner { margin-top: 72px; max-width: 760px; }
   .hero h1 { font-size: clamp(42px, 9vw, 84px); font-weight: 700; margin-top: 18px; }
+  .hero h1, .hero .lead { text-shadow: 0 2px 24px rgba(0,0,0,.55); }
+  @media (min-width: 900px) {
+    .hero::after { background:
+      linear-gradient(90deg, rgba(5,8,6,.85) 0%, rgba(5,8,6,.55) 45%, rgba(5,8,6,.12) 100%),
+      linear-gradient(180deg, rgba(5,8,6,.4) 0%, transparent 25%, transparent 70%, var(--bg) 100%); }
+  }
   .hero .lead { font-size: 18px; color: #c9d3cb; max-width: 36em; margin: 24px 0 32px; }
   .hero .lead b { color: var(--fg); font-weight: 600; }
   .hero .note { font-size: 13px; color: var(--muted); margin-top: 14px; }
