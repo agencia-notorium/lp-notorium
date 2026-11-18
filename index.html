@@ -864,6 +864,21 @@
     };
     Object.assign(lead, tracking);
 
+    // Medição: mesmo event_id no Pixel (navegador) e na CAPI (servidor) para a Meta não contar duas vezes.
+    function cookie(n) { var m = document.cookie.match('(?:^|; )' + n + '=([^;]*)'); return m ? decodeURIComponent(m[1]) : ''; }
+    var eventId = 'lead-' + Date.now() + '-' + Math.random().toString(36).slice(2, 10);
+    var fbc = cookie('_fbc') || (tracking.fbclid ? 'fb.1.' + Date.now() + '.' + tracking.fbclid : '');
+    var partesNome = String(lead.nome).trim().toLowerCase().split(/\s+/);
+    var meta = {
+      event_id: eventId,
+      fbp: cookie('_fbp'),
+      fbc: fbc,
+      user_agent: navigator.userAgent,
+      event_source_url: location.href,
+      fn: partesNome[0] || '',
+      ln: partesNome.length > 1 ? partesNome[partesNome.length - 1] : ''
+    };
+
     if (C.webhookUrl) {
       try {
         // Formato esperado pela função webhook-leads do CRM Notorium
@@ -880,13 +895,21 @@
           page_url: location.href,
           investimento_anuncios: lead.investimento_anuncios,
           prioridade: lead.prioridade,
-          utm: tracking
+          utm: tracking,
+          meta: meta
         };
         fetch(C.webhookUrl, { method: 'POST', keepalive: true,
           headers: { 'Content-Type': 'application/json' }, body: JSON.stringify(crm) }).catch(function () {});
       } catch (err) {}
     }
-    if (window.fbq) fbq('track', 'Lead', { content_name: 'Diagnóstico gratuito', content_category: lead.segmento });
+    if (window.fbq) {
+      // Correspondência avançada: o Pixel criptografa (SHA-256) esses dados antes de enviar.
+      var am = { ph: lead.whatsapp, country: 'br' };
+      if (meta.fn) am.fn = meta.fn;
+      if (meta.ln) am.ln = meta.ln;
+      fbq('init', C.metaPixelId, am);
+      fbq('track', 'Lead', { content_name: 'Diagnóstico gratuito', content_category: lead.segmento }, { eventID: eventId });
+    }
 
     var msg = 'Oi! Sou ' + lead.nome + ' e pedi o diagnóstico gratuito.\n' +
               'Empresa: ' + lead.instagram_ou_site + '\n' +
