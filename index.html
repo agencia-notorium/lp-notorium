@@ -820,6 +820,23 @@
     sel.addEventListener('change', function () { sel.classList.toggle('empty', !sel.value); });
   });
   form.addEventListener('input', clearErr);
+
+  // Funil de medição: clique no botão → começou a preencher (FormStart) → enviou (Lead).
+  // FormStart dispara uma única vez, na primeira vez que a pessoa digita ou escolhe uma opção.
+  var formStarted = false;
+  function onFormStart() {
+    if (formStarted) return;
+    formStarted = true;
+    if (window.fbq) fbq('trackCustom', 'FormStart', { content_name: 'Diagnóstico gratuito' });
+  }
+  form.addEventListener('input', onFormStart);
+  form.addEventListener('change', onFormStart);
+
+  document.querySelectorAll('a[href="#diagnostico"]').forEach(function (a) {
+    a.addEventListener('click', function () {
+      if (window.fbq) fbq('trackCustom', 'CliqueCTA', { local: a.closest('.hero') ? 'topo' : 'barra-fixa' });
+    });
+  });
   form.addEventListener('change', clearErr);
 
   form.addEventListener('submit', function (e) {
